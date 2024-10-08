@@ -49,11 +49,26 @@ public class Student
     // setMethode
     public void setName(String name)
     {
-        this.name=name;
+        if(name != null)
+        {
+              this.name=name;
+        }
+        else{
+            System.out.println("Fehler:Kein name!");
+            this.name="unknow";
+        }
     }
+    // Parameter Prüfung im SetMethode
     public void setAlter(int alter)
     {
+        if((alter>=13) && (alter<=50))
+        {
         this.alter=alter;
+        }else
+        {
+            System.out.println("Fehler: ungültiges Alter!");
+            this.alter=13;
+        }
     }
     public void setReligion(String religion)
     {
@@ -83,6 +98,6 @@ public class Student
     // printMethode
     public void printStudent()
     {
-        System.out.println(name+ " "+ alter + " " + religion+ " " + matura + ";");
+        System.out.println("Student: " + name+ " "+ alter + " Jahre Alt, Religion: " + religion + " Matura: " + matura + ";");
     }
 }
